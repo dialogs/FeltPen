@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		740058201F1137550037E7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7400581F1F1137550037E7ED /* AppDelegate.swift */; };
+		740058221F1137550037E7ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058211F1137550037E7ED /* ViewController.swift */; };
+		740058251F1137550037E7ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740058231F1137550037E7ED /* Main.storyboard */; };
+		740058271F1137550037E7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740058261F1137550037E7ED /* Assets.xcassets */; };
+		7400582A1F1137550037E7ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740058281F1137550037E7ED /* LaunchScreen.storyboard */; };
+		740058351F1137550037E7ED /* FeltPenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058341F1137550037E7ED /* FeltPenTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		740058311F1137550037E7ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 740058141F1137550037E7ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7400581B1F1137550037E7ED;
+			remoteInfo = FeltPen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7400581C1F1137550037E7ED /* FeltPen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeltPen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7400581F1F1137550037E7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		740058211F1137550037E7ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		740058241F1137550037E7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		740058261F1137550037E7ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		740058291F1137550037E7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7400582B1F1137550037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		740058301F1137550037E7ED /* FeltPenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeltPenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		740058341F1137550037E7ED /* FeltPenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeltPenTests.swift; sourceTree = "<group>"; };
+		740058361F1137550037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		740058191F1137550037E7ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7400582D1F1137550037E7ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		740058131F1137550037E7ED = {
+			isa = PBXGroup;
+			children = (
+				7400581E1F1137550037E7ED /* FeltPen */,
+				740058331F1137550037E7ED /* FeltPenTests */,
+				7400581D1F1137550037E7ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7400581D1F1137550037E7ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7400581C1F1137550037E7ED /* FeltPen.app */,
+				740058301F1137550037E7ED /* FeltPenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7400581E1F1137550037E7ED /* FeltPen */ = {
+			isa = PBXGroup;
+			children = (
+				7400581F1F1137550037E7ED /* AppDelegate.swift */,
+				740058211F1137550037E7ED /* ViewController.swift */,
+				740058231F1137550037E7ED /* Main.storyboard */,
+				740058261F1137550037E7ED /* Assets.xcassets */,
+				740058281F1137550037E7ED /* LaunchScreen.storyboard */,
+				7400582B1F1137550037E7ED /* Info.plist */,
+			);
+			path = FeltPen;
+			sourceTree = "<group>";
+		};
+		740058331F1137550037E7ED /* FeltPenTests */ = {
+			isa = PBXGroup;
+			children = (
+				740058341F1137550037E7ED /* FeltPenTests.swift */,
+				740058361F1137550037E7ED /* Info.plist */,
+			);
+			path = FeltPenTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7400581B1F1137550037E7ED /* FeltPen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 740058391F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */;
+			buildPhases = (
+				740058181F1137550037E7ED /* Sources */,
+				740058191F1137550037E7ED /* Frameworks */,
+				7400581A1F1137550037E7ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FeltPen;
+			productName = FeltPen;
+			productReference = 7400581C1F1137550037E7ED /* FeltPen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7400582F1F1137550037E7ED /* FeltPenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7400583C1F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */;
+			buildPhases = (
+				7400582C1F1137550037E7ED /* Sources */,
+				7400582D1F1137550037E7ED /* Frameworks */,
+				7400582E1F1137550037E7ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				740058321F1137550037E7ED /* PBXTargetDependency */,
+			);
+			name = FeltPenTests;
+			productName = FeltPenTests;
+			productReference = 740058301F1137550037E7ED /* FeltPenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		740058141F1137550037E7ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Aleksei Gordeev";
+				TargetAttributes = {
+					7400581B1F1137550037E7ED = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = E9NX44V4VR;
+						ProvisioningStyle = Automatic;
+					};
+					7400582F1F1137550037E7ED = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = E9NX44V4VR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7400581B1F1137550037E7ED;
+					};
+				};
+			};
+			buildConfigurationList = 740058171F1137550037E7ED /* Build configuration list for PBXProject "FeltPen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 740058131F1137550037E7ED;
+			productRefGroup = 7400581D1F1137550037E7ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7400581B1F1137550037E7ED /* FeltPen */,
+				7400582F1F1137550037E7ED /* FeltPenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7400581A1F1137550037E7ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7400582A1F1137550037E7ED /* LaunchScreen.storyboard in Resources */,
+				740058271F1137550037E7ED /* Assets.xcassets in Resources */,
+				740058251F1137550037E7ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7400582E1F1137550037E7ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		740058181F1137550037E7ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740058221F1137550037E7ED /* ViewController.swift in Sources */,
+				740058201F1137550037E7ED /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7400582C1F1137550037E7ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740058351F1137550037E7ED /* FeltPenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		740058321F1137550037E7ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7400581B1F1137550037E7ED /* FeltPen */;
+			targetProxy = 740058311F1137550037E7ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		740058231F1137550037E7ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740058241F1137550037E7ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		740058281F1137550037E7ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740058291F1137550037E7ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		740058371F1137550037E7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		740058381F1137550037E7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7400583A1F1137550037E7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E9NX44V4VR;
+				INFOPLIST_FILE = FeltPen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7400583B1F1137550037E7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E9NX44V4VR;
+				INFOPLIST_FILE = FeltPen/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7400583D1F1137550037E7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E9NX44V4VR;
+				INFOPLIST_FILE = FeltPenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeltPen.app/FeltPen";
+			};
+			name = Debug;
+		};
+		7400583E1F1137550037E7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E9NX44V4VR;
+				INFOPLIST_FILE = FeltPenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeltPen.app/FeltPen";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		740058171F1137550037E7ED /* Build configuration list for PBXProject "FeltPen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740058371F1137550037E7ED /* Debug */,
+				740058381F1137550037E7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		740058391F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7400583A1F1137550037E7ED /* Debug */,
+				7400583B1F1137550037E7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7400583C1F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7400583D1F1137550037E7ED /* Debug */,
+				7400583E1F1137550037E7ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 740058141F1137550037E7ED /* Project object */;
+}

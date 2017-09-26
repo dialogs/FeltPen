@@ -17,9 +17,8 @@ import Foundation
  
  */
 public class WrappersDetector: Detector {
-    
+
     public let searchingItems: [SearchingItem]
-    
     
     // MARK: init
     

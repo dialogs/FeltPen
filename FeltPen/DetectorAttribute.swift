@@ -53,6 +53,8 @@ public struct DetectorAttributeName: RawRepresentable, Hashable {
     
     public static let codeBlock = DetectorAttributeName.init("lex.detector.attribute.code_block")
     
+    public static let mention = DetectorAttributeName.init("lex.detector.attribute.mention")
+    
     public var hashValue: Int {
         return self.rawValue.hashValue
     }

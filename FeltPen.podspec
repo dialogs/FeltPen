@@ -16,7 +16,7 @@ Simple framework to detecting and decorating special elements in text.
   #  When using multiple platforms
   s.ios.deployment_target = "10.0"
 
-# s.source       = { :git => "http://EXAMPLE/FeltPen.git", :tag => "#{s.version}" }
+  s.source       = { :git => "ssh://git@bitbucket.transmit.im:7999/dlg/feltpen.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -27,7 +27,7 @@ Simple framework to detecting and decorating special elements in text.
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "FeltPen/**/*.{swift}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"

@@ -7,49 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		740058201F1137550037E7ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7400581F1F1137550037E7ED /* AppDelegate.swift */; };
-		740058221F1137550037E7ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058211F1137550037E7ED /* ViewController.swift */; };
-		740058251F1137550037E7ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740058231F1137550037E7ED /* Main.storyboard */; };
-		740058271F1137550037E7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740058261F1137550037E7ED /* Assets.xcassets */; };
-		7400582A1F1137550037E7ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740058281F1137550037E7ED /* LaunchScreen.storyboard */; };
-		740058351F1137550037E7ED /* FeltPenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058341F1137550037E7ED /* FeltPenTests.swift */; };
+		7400584D1F11379A0037E7ED /* FeltPen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740058441F11379A0037E7ED /* FeltPen.framework */; };
+		740058541F11379A0037E7ED /* FeltPen.h in Headers */ = {isa = PBXBuildFile; fileRef = 740058461F11379A0037E7ED /* FeltPen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7400585E1F1137C30037E7ED /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7400585B1F1137C30037E7ED /* Detector.swift */; };
+		7400585F1F1137C30037E7ED /* DetectorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7400585C1F1137C30037E7ED /* DetectorAttribute.swift */; };
+		740058601F1137C30037E7ED /* WrappersDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7400585D1F1137C30037E7ED /* WrappersDetector.swift */; };
+		740058641F1137D70037E7ED /* WrappersDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058621F1137D70037E7ED /* WrappersDetectorTests.swift */; };
+		740CD0DB1F155EEB0030D23A /* UrlDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CD0DA1F155EEB0030D23A /* UrlDetector.swift */; };
+		7414EFB21F113E7F0042240D /* WrappersDetectorSearchingItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058611F1137D70037E7ED /* WrappersDetectorSearchingItemTests.swift */; };
+		74507B001F683A6E00B94D02 /* NSRange+FeltPenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */; };
+		745750BF1F1573F900D8AA4B /* UrlDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745750BE1F1573F900D8AA4B /* UrlDetectorTests.swift */; };
+		745A25EC1F7A521100883168 /* BlockDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A25EB1F7A521100883168 /* BlockDetector.swift */; };
+		745A25EE1F7A6D8500883168 /* BlockDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A25ED1F7A6D8500883168 /* BlockDetectorTests.swift */; };
+		745A25F01F7A7B4800883168 /* MentionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A25EF1F7A7B4800883168 /* MentionDetector.swift */; };
+		747F90F71F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F90F61F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift */; };
+		74C39C8C1F692A4E0088020F /* NSRange+FeltPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C39C8B1F692A4E0088020F /* NSRange+FeltPen.swift */; };
+		74DE72D91F75567100F58B77 /* UrlDetector+ConfigDomains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE72D81F75567100F58B77 /* UrlDetector+ConfigDomains.swift */; };
+		74F395081F7113C50082D52F /* NSAttributedString+FeltPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F395071F7113C50082D52F /* NSAttributedString+FeltPen.swift */; };
+		74F3950E1F7144C90082D52F /* URLRegularExpressionPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F3950D1F7144C90082D52F /* URLRegularExpressionPart.swift */; };
+		74F395101F7157710082D52F /* LinkExpect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F3950F1F7157710082D52F /* LinkExpect.swift */; };
+		74F3D0211F141B26002C571B /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F3D0201F141B26002C571B /* SampleText.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		740058311F1137550037E7ED /* PBXContainerItemProxy */ = {
+		7400584E1F11379A0037E7ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 740058141F1137550037E7ED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7400581B1F1137550037E7ED;
+			remoteGlobalIDString = 740058431F11379A0037E7ED;
 			remoteInfo = FeltPen;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7400581C1F1137550037E7ED /* FeltPen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeltPen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7400581F1F1137550037E7ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		740058211F1137550037E7ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		740058241F1137550037E7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		740058261F1137550037E7ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		740058291F1137550037E7ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7400582B1F1137550037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		740058301F1137550037E7ED /* FeltPenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeltPenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		740058341F1137550037E7ED /* FeltPenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeltPenTests.swift; sourceTree = "<group>"; };
-		740058361F1137550037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		740058441F11379A0037E7ED /* FeltPen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeltPen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		740058461F11379A0037E7ED /* FeltPen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeltPen.h; sourceTree = "<group>"; };
+		740058471F11379A0037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7400584C1F11379A0037E7ED /* FeltPenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeltPenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		740058531F11379A0037E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7400585B1F1137C30037E7ED /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		7400585C1F1137C30037E7ED /* DetectorAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorAttribute.swift; sourceTree = "<group>"; };
+		7400585D1F1137C30037E7ED /* WrappersDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersDetector.swift; sourceTree = "<group>"; };
+		740058611F1137D70037E7ED /* WrappersDetectorSearchingItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersDetectorSearchingItemTests.swift; sourceTree = "<group>"; };
+		740058621F1137D70037E7ED /* WrappersDetectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersDetectorTests.swift; sourceTree = "<group>"; };
+		740CD0DA1F155EEB0030D23A /* UrlDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlDetector.swift; sourceTree = "<group>"; };
+		74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+FeltPenTests.swift"; sourceTree = "<group>"; };
+		745750BE1F1573F900D8AA4B /* UrlDetectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlDetectorTests.swift; sourceTree = "<group>"; };
+		745A25EB1F7A521100883168 /* BlockDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetector.swift; sourceTree = "<group>"; };
+		745A25ED1F7A6D8500883168 /* BlockDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetectorTests.swift; sourceTree = "<group>"; };
+		745A25EF1F7A7B4800883168 /* MentionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionDetector.swift; sourceTree = "<group>"; };
+		747F90F61F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextCheckingResult+FeltPen.swift"; sourceTree = "<group>"; };
+		74A3C9A81F11604E00CD4EFF /* Regexps.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Regexps.playground; sourceTree = "<group>"; };
+		74C39C8B1F692A4E0088020F /* NSRange+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+FeltPen.swift"; sourceTree = "<group>"; };
+		74DE72D81F75567100F58B77 /* UrlDetector+ConfigDomains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UrlDetector+ConfigDomains.swift"; sourceTree = "<group>"; };
+		74F395071F7113C50082D52F /* NSAttributedString+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+FeltPen.swift"; sourceTree = "<group>"; };
+		74F3950D1F7144C90082D52F /* URLRegularExpressionPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRegularExpressionPart.swift; sourceTree = "<group>"; };
+		74F3950F1F7157710082D52F /* LinkExpect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkExpect.swift; sourceTree = "<group>"; };
+		74F3D0201F141B26002C571B /* SampleText.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleText.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		740058191F1137550037E7ED /* Frameworks */ = {
+		740058401F11379A0037E7ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7400582D1F1137550037E7ED /* Frameworks */ = {
+		740058491F11379A0037E7ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7400584D1F11379A0037E7ED /* FeltPen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +88,8 @@
 		740058131F1137550037E7ED = {
 			isa = PBXGroup;
 			children = (
-				7400581E1F1137550037E7ED /* FeltPen */,
-				740058331F1137550037E7ED /* FeltPenTests */,
+				740058451F11379A0037E7ED /* FeltPen */,
+				740058501F11379A0037E7ED /* FeltPenTests */,
 				7400581D1F1137550037E7ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,44 +97,78 @@
 		7400581D1F1137550037E7ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7400581C1F1137550037E7ED /* FeltPen.app */,
-				740058301F1137550037E7ED /* FeltPenTests.xctest */,
+				740058441F11379A0037E7ED /* FeltPen.framework */,
+				7400584C1F11379A0037E7ED /* FeltPenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7400581E1F1137550037E7ED /* FeltPen */ = {
+		740058451F11379A0037E7ED /* FeltPen */ = {
 			isa = PBXGroup;
 			children = (
-				7400581F1F1137550037E7ED /* AppDelegate.swift */,
-				740058211F1137550037E7ED /* ViewController.swift */,
-				740058231F1137550037E7ED /* Main.storyboard */,
-				740058261F1137550037E7ED /* Assets.xcassets */,
-				740058281F1137550037E7ED /* LaunchScreen.storyboard */,
-				7400582B1F1137550037E7ED /* Info.plist */,
+				7400585B1F1137C30037E7ED /* Detector.swift */,
+				7400585C1F1137C30037E7ED /* DetectorAttribute.swift */,
+				7400585D1F1137C30037E7ED /* WrappersDetector.swift */,
+				740CD0DA1F155EEB0030D23A /* UrlDetector.swift */,
+				745A25EF1F7A7B4800883168 /* MentionDetector.swift */,
+				745A25EB1F7A521100883168 /* BlockDetector.swift */,
+				74DE72D81F75567100F58B77 /* UrlDetector+ConfigDomains.swift */,
+				74F3950D1F7144C90082D52F /* URLRegularExpressionPart.swift */,
+				747F90F61F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift */,
+				74C39C8B1F692A4E0088020F /* NSRange+FeltPen.swift */,
+				74F395071F7113C50082D52F /* NSAttributedString+FeltPen.swift */,
+				740058461F11379A0037E7ED /* FeltPen.h */,
+				740058471F11379A0037E7ED /* Info.plist */,
 			);
 			path = FeltPen;
 			sourceTree = "<group>";
 		};
-		740058331F1137550037E7ED /* FeltPenTests */ = {
+		740058501F11379A0037E7ED /* FeltPenTests */ = {
 			isa = PBXGroup;
 			children = (
-				740058341F1137550037E7ED /* FeltPenTests.swift */,
-				740058361F1137550037E7ED /* Info.plist */,
+				74F3D01F1F141B1A002C571B /* Resources */,
+				740058611F1137D70037E7ED /* WrappersDetectorSearchingItemTests.swift */,
+				740058621F1137D70037E7ED /* WrappersDetectorTests.swift */,
+				745750BE1F1573F900D8AA4B /* UrlDetectorTests.swift */,
+				74F3950F1F7157710082D52F /* LinkExpect.swift */,
+				74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */,
+				740058531F11379A0037E7ED /* Info.plist */,
+				74A3C9A81F11604E00CD4EFF /* Regexps.playground */,
+				745A25ED1F7A6D8500883168 /* BlockDetectorTests.swift */,
 			);
 			path = FeltPenTests;
 			sourceTree = "<group>";
 		};
+		74F3D01F1F141B1A002C571B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74F3D0201F141B26002C571B /* SampleText.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		740058411F11379A0037E7ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740058541F11379A0037E7ED /* FeltPen.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		7400581B1F1137550037E7ED /* FeltPen */ = {
+		740058431F11379A0037E7ED /* FeltPen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 740058391F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */;
+			buildConfigurationList = 740058551F11379A0037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */;
 			buildPhases = (
-				740058181F1137550037E7ED /* Sources */,
-				740058191F1137550037E7ED /* Frameworks */,
-				7400581A1F1137550037E7ED /* Resources */,
+				7400583F1F11379A0037E7ED /* Sources */,
+				740058401F11379A0037E7ED /* Frameworks */,
+				740058411F11379A0037E7ED /* Headers */,
+				740058421F11379A0037E7ED /* Resources */,
 			);
 			buildRules = (
 			);
@@ -113,25 +176,25 @@
 			);
 			name = FeltPen;
 			productName = FeltPen;
-			productReference = 7400581C1F1137550037E7ED /* FeltPen.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 740058441F11379A0037E7ED /* FeltPen.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		7400582F1F1137550037E7ED /* FeltPenTests */ = {
+		7400584B1F11379A0037E7ED /* FeltPenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7400583C1F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */;
+			buildConfigurationList = 740058581F11379A0037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */;
 			buildPhases = (
-				7400582C1F1137550037E7ED /* Sources */,
-				7400582D1F1137550037E7ED /* Frameworks */,
-				7400582E1F1137550037E7ED /* Resources */,
+				740058481F11379A0037E7ED /* Sources */,
+				740058491F11379A0037E7ED /* Frameworks */,
+				7400584A1F11379A0037E7ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				740058321F1137550037E7ED /* PBXTargetDependency */,
+				7400584F1F11379A0037E7ED /* PBXTargetDependency */,
 			);
 			name = FeltPenTests;
 			productName = FeltPenTests;
-			productReference = 740058301F1137550037E7ED /* FeltPenTests.xctest */;
+			productReference = 7400584C1F11379A0037E7ED /* FeltPenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -144,16 +207,16 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Aleksei Gordeev";
 				TargetAttributes = {
-					7400581B1F1137550037E7ED = {
+					740058431F11379A0037E7ED = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = E9NX44V4VR;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
-					7400582F1F1137550037E7ED = {
+					7400584B1F11379A0037E7ED = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = E9NX44V4VR;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 7400581B1F1137550037E7ED;
 					};
 				};
 			};
@@ -170,78 +233,71 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7400581B1F1137550037E7ED /* FeltPen */,
-				7400582F1F1137550037E7ED /* FeltPenTests */,
+				740058431F11379A0037E7ED /* FeltPen */,
+				7400584B1F11379A0037E7ED /* FeltPenTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7400581A1F1137550037E7ED /* Resources */ = {
+		740058421F11379A0037E7ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7400582A1F1137550037E7ED /* LaunchScreen.storyboard in Resources */,
-				740058271F1137550037E7ED /* Assets.xcassets in Resources */,
-				740058251F1137550037E7ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7400582E1F1137550037E7ED /* Resources */ = {
+		7400584A1F11379A0037E7ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F3D0211F141B26002C571B /* SampleText.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		740058181F1137550037E7ED /* Sources */ = {
+		7400583F1F11379A0037E7ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740058221F1137550037E7ED /* ViewController.swift in Sources */,
-				740058201F1137550037E7ED /* AppDelegate.swift in Sources */,
+				74F395081F7113C50082D52F /* NSAttributedString+FeltPen.swift in Sources */,
+				74F3950E1F7144C90082D52F /* URLRegularExpressionPart.swift in Sources */,
+				745A25F01F7A7B4800883168 /* MentionDetector.swift in Sources */,
+				7400585F1F1137C30037E7ED /* DetectorAttribute.swift in Sources */,
+				747F90F71F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift in Sources */,
+				740CD0DB1F155EEB0030D23A /* UrlDetector.swift in Sources */,
+				745A25EC1F7A521100883168 /* BlockDetector.swift in Sources */,
+				740058601F1137C30037E7ED /* WrappersDetector.swift in Sources */,
+				74DE72D91F75567100F58B77 /* UrlDetector+ConfigDomains.swift in Sources */,
+				7400585E1F1137C30037E7ED /* Detector.swift in Sources */,
+				74C39C8C1F692A4E0088020F /* NSRange+FeltPen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7400582C1F1137550037E7ED /* Sources */ = {
+		740058481F11379A0037E7ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740058351F1137550037E7ED /* FeltPenTests.swift in Sources */,
+				74F395101F7157710082D52F /* LinkExpect.swift in Sources */,
+				740058641F1137D70037E7ED /* WrappersDetectorTests.swift in Sources */,
+				7414EFB21F113E7F0042240D /* WrappersDetectorSearchingItemTests.swift in Sources */,
+				745750BF1F1573F900D8AA4B /* UrlDetectorTests.swift in Sources */,
+				74507B001F683A6E00B94D02 /* NSRange+FeltPenTests.swift in Sources */,
+				745A25EE1F7A6D8500883168 /* BlockDetectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		740058321F1137550037E7ED /* PBXTargetDependency */ = {
+		7400584F1F11379A0037E7ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7400581B1F1137550037E7ED /* FeltPen */;
-			targetProxy = 740058311F1137550037E7ED /* PBXContainerItemProxy */;
+			target = 740058431F11379A0037E7ED /* FeltPen */;
+			targetProxy = 7400584E1F11379A0037E7ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		740058231F1137550037E7ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				740058241F1137550037E7ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		740058281F1137550037E7ED /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				740058291F1137550037E7ED /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		740058371F1137550037E7ED /* Debug */ = {
@@ -291,6 +347,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -333,63 +390,83 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		7400583A1F1137550037E7ED /* Debug */ = {
+		740058561F11379A0037E7ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E9NX44V4VR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FeltPen/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		7400583B1F1137550037E7ED /* Release */ = {
+		740058571F11379A0037E7ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E9NX44V4VR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FeltPen/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		7400583D1F1137550037E7ED /* Debug */ = {
+		740058591F11379A0037E7ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E9NX44V4VR;
 				INFOPLIST_FILE = FeltPenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeltPen.app/FeltPen";
 			};
 			name = Debug;
 		};
-		7400583E1F1137550037E7ED /* Release */ = {
+		7400585A1F11379A0037E7ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E9NX44V4VR;
 				INFOPLIST_FILE = FeltPenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vladlex.FeltPenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FeltPen.app/FeltPen";
 			};
 			name = Release;
 		};
@@ -405,21 +482,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		740058391F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */ = {
+		740058551F11379A0037E7ED /* Build configuration list for PBXNativeTarget "FeltPen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7400583A1F1137550037E7ED /* Debug */,
-				7400583B1F1137550037E7ED /* Release */,
+				740058561F11379A0037E7ED /* Debug */,
+				740058571F11379A0037E7ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		7400583C1F1137550037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */ = {
+		740058581F11379A0037E7ED /* Build configuration list for PBXNativeTarget "FeltPenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7400583D1F1137550037E7ED /* Debug */,
-				7400583E1F1137550037E7ED /* Release */,
+				740058591F11379A0037E7ED /* Debug */,
+				7400585A1F11379A0037E7ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

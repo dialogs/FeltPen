@@ -53,7 +53,11 @@ public struct UrlRegex: RawRepresentable {
     }
     
     /// Should begin with empty space / new line or punctuation character
-    public static let begin = UrlRegex.init("([.,{()\\[\\]]|\\s|^)")
+    public static let begin = UrlRegex.init("([.,]|\\s|^)")
+    
+    public static let enclosingBraces = UrlRegex.init("([{(\\[]*)")
+    
+    
     
     /**
      Scheme names consist of a sequence of characters beginning with a letter
@@ -63,11 +67,15 @@ public struct UrlRegex: RawRepresentable {
      
      Optional.
      */
-    public static let scheme = UrlRegex.init("([a-zA-Z][a-zA-Z0-9+-.]*)://")
+    public static let scheme = UrlRegex.init("(([a-zA-Z][a-zA-Z0-9+-.]*)://)?")
     
-    public static let host = UrlRegex.init("((\\p{L}|[0-9])+)\\.com")
+    public static let host = UrlRegex.init("(((\\p{L}|[0-9])+)\\.((\\p{L}|[0-9])+))")
     
-    public static let path = UrlRegex.init("(/|\\?.*)[\\S]*")
+    public static let path = UrlRegex.init("([^//])")
+    
+    public static let query = UrlRegex.init("((/|\\?.*)[\\S]*)?")
+    
+    public static let disclosingBraces = UrlRegex.init("([)}\\]])*")
     
     public static let end = UrlRegex.init("(?=([.,{}()\\[\\]])|$|\\s)")
     
@@ -77,10 +85,24 @@ public struct UrlRegex: RawRepresentable {
         let url = (UrlRegex.scheme.closured.optional +
             UrlRegex.host.closured +
             UrlRegex.path.closured.optional).closured
-        let wrapped = UrlRegex.begin + url + UrlRegex.wordEnd
+        let wrapped = UrlRegex.begin + UrlRegex.enclosingBraces + url + UrlRegex.wordEnd
         
         return wrapped
     }()
+    
+    /*
+ let pattern = "([.,]|\\s|^)"
+ + "([{(\\[]*)"
+ + "("
+ + "(([a-zA-Z][a-zA-Z0-9+-.]*)://)?"
+ //+ "(((\\p{L}|[0-9])+)\\.((\\p{L}|[0-9])+))"
+ //            + "(.+)"
+ +" ([^//])"
+ + "((/|\\?.*)[\\S]*)?"
+ + ")"
+ + "([)}\\]])*"
+ + "(?=[.,;]|\\s|$)"
+ */
     
     public static let urlParts: UrlRegex = {
         let url = (UrlRegex.scheme.closured.optional +

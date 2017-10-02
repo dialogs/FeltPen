@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class UrlDetector: Detector {
+public class UrlDetector: Detector, CustomStringConvertible {
     
     public let config: Config
     
@@ -60,6 +60,16 @@ public class UrlDetector: Detector {
         return [.attributesChange]
     }
     
+    public var description: String {
+        var patterns:[String: String] = [:]
+        if self.config.subdetectors.contains(.markdownUrlDetector) {
+            patterns["markdown"] = type(of: self).markdownUrlDetector.pattern
+        }
+        if self.config.subdetectors.contains(.linkDetector) {
+            patterns["in-text urls"] = type(of: self).urlDetector.pattern
+        }
+        return "<\(type(of: self)), patterns: \(patterns)>"
+    }
     
     // MARK: Private
     
@@ -77,12 +87,13 @@ public class UrlDetector: Detector {
     }
     
     private static let urlDetector: NSRegularExpression = {
+        let begin = "([.,]|\\s|^)"
         let pattern = "([.,]|\\s|^)"
             + "([{(\\[]*)"
             + "("
             + "(([a-zA-Z][a-zA-Z0-9+-.]*)://)?"
             //+ "(((\\p{L}|[0-9])+)\\.((\\p{L}|[0-9])+))"
-            + "((\\p{L}|[0-9.])+)"
+            + "(([^/?])+)"
             + "((/|\\?.*)[\\S]*)?"
             + ")"
             + "([)}\\]])*"
@@ -104,7 +115,7 @@ public class UrlDetector: Detector {
     @discardableResult private func processLinks(text: NSMutableAttributedString, ignoreMarkdownLinks: Bool = true) -> Bool {
         
         let markdownRanges = text.ranges(ofAttribute: DetectorAttributeName.markdownUrl.rawValue)
-        let allowedRanges = NSRange.init(fullRangeOfString: text.string).subranges(rangesToExtract: markdownRanges)
+        let allowedRanges = NSRange.range(of: text.string).subranges(rangesToExtract: markdownRanges)
         
         guard allowedRanges.count > 0 else {
             return false
@@ -120,7 +131,7 @@ public class UrlDetector: Detector {
             let matches = regex.matches(in: string, options: [], range: range)
             for match in matches {
                 
-                guard var wholeRange = match.rangeOfClosure(BasicLinkClosuresInfo.whole) else {
+                guard var wholeRange = match.unicodeScalarRangeOfClosure(idx: BasicLinkClosuresInfo.whole.rawValue, string: string) else {
                     continue
                 }
                 
@@ -139,22 +150,24 @@ public class UrlDetector: Detector {
                 
                 var fixedPathChanges = 0
                 if var fixedPath = path {
-                    let beforeFixLength = fixedPath.count
+                    let beforeFixLastIdx = fixedPath.unicodeScalars.endIndex
                     fixedPath = self.removeCommas(fixedPath)
                     
-                    if let disclosingClosure = self.findDisclosingClosure(text: string, at: wholeRange) {
+                    if let disclosingClosure = self.findDisclosingClosure(text: string, at: NSRange.range(of: string)) {
                         
-                        let range = string.startIndex..<string.endIndex
-                        string.enumerateSubstrings(in: range, options: .byLines, { (str, range, effRange, stop) in
-                            
-                        })
+//                        let range = string.startIndex..<string.endIndex
+//                        string.enumerateSubstrings(in: range, options: .byLines, { (str, range, effRange, stop) in
+//                            
+//                        })
                         
-                        if let range = match.rangeOfClosure(BasicLinkClosuresInfo.enclosing) {
-                            let enclosing = (string as NSString).substring(with: range)
+                        if let range = match.unicodeScalarRangeOfClosure(idx: BasicLinkClosuresInfo.enclosing.rawValue, string: string) {
+                            let enclosing = String.init(string.unicodeScalars[range])
                             let stack = self.buildEnclosingStack(enclosing)
                             fixedPath = self.fixPath(fixedPath, stack: stack)
                         }
                         else {
+                            
+                            // TODO: Check if it last item of list in braces, like (link1, link2, *link3*)
                             print("Closure found in \(string)")
                             
                             //                            let nsstring = string as NSString
@@ -163,9 +176,8 @@ public class UrlDetector: Detector {
                         }
                     }
                     
-           
                     
-                    fixedPathChanges = beforeFixLength - fixedPath.count
+                    fixedPathChanges = beforeFixLastIdx.encodedOffset - fixedPath.unicodeScalars.endIndex.encodedOffset
                     
                     let items = self.breakPathAndQuery(fixedPath)
                     path = items.path
@@ -175,7 +187,9 @@ public class UrlDetector: Detector {
                 }
                 
                 if fixedPathChanges > 0 {
-                    wholeRange.length -= fixedPathChanges
+                    let newUpperBoundOffset = wholeRange.upperBound.encodedOffset - fixedPathChanges
+                    let newUpperBound = String.UnicodeScalarIndex.init(encodedOffset: newUpperBoundOffset)
+                    wholeRange = wholeRange.lowerBound..<newUpperBound
                 }
                 
                 var components = URLComponents.init()
@@ -189,7 +203,8 @@ public class UrlDetector: Detector {
                     continue
                 }
                 
-                let spot = DetectorSpot.init([DetectorAttributeName.url : url], range: wholeRange)
+                let convertedRange = NSRange.fromUnicodeScalar(wholeRange)
+                let spot = DetectorSpot.init([DetectorAttributeName.url : url], range: convertedRange)
                 spots.append(spot)
             }
         }
@@ -295,7 +310,7 @@ public class UrlDetector: Detector {
     private func removeCommas(_ string: String) -> String {
         let result = type(of: self).endingCommaRegex.stringByReplacingMatches(in: string,
                                                                               options: [],
-                                                                              range: .init(fullRangeOfString: string),
+                                                                              range: .range(of: string),
                                                                               withTemplate: "")
         return result
     }
@@ -328,14 +343,14 @@ public class UrlDetector: Detector {
     private let disclosingRegex = try! NSRegularExpression.init(pattern: "\\)", options: [])
     
     private func isCurlyClosureBalancedInPath(_ path: String) -> Bool {
-        let enclosingMatches = enclosingRegex.matches(in: path, options: [], range: .init(fullRangeOfString: path))
-        let disclosingMatches = disclosingRegex.matches(in: path, options: [], range: .init(fullRangeOfString: path))
+        let enclosingMatches = enclosingRegex.matches(in: path, options: [], range: .range(of: path))
+        let disclosingMatches = disclosingRegex.matches(in: path, options: [], range: .range(of: path))
         return disclosingMatches.count > enclosingMatches.count
     }
     
     private func markdownLinkRanges(in attrString: NSAttributedString) -> [NSRange] {
         let attr = DetectorAttributeName.markdownUrl.rawValue
-        let range = NSRange.init(fullRangeOfString: attrString.string)
+        let range = NSRange.range(of: attrString.string)
         var ranges: [NSRange] = []
         attrString.enumerateAttribute(attr, in: range, options: [], using: { value, range, _ in
             if value != nil {
@@ -349,7 +364,7 @@ public class UrlDetector: Detector {
     private func isValidHost(_ string: String) -> Bool {
         guard let match = type(of: self).firstDomainRegex.firstMatch(in: string,
                                                                      options: [],
-                                                                     range: .init(fullRangeOfString: string)) else {
+                                                                     range: .range(of: string)) else {
                                                                         return false
         }
         

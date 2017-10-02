@@ -55,6 +55,18 @@ public struct DetectorAttributeName: RawRepresentable, Hashable {
     
     public static let mention = DetectorAttributeName.init("lex.detector.attribute.mention")
     
+    public static let allDefault: [DetectorAttributeName] = [
+        .url,
+        .markdownUrl,
+        .quote,
+        .codeBlock,
+        .mention,
+        .charWrapped(WrappersDetector.SearchingItem.backtick.charString),
+        .charWrapped(WrappersDetector.SearchingItem.asteriks.charString),
+        .charWrapped(WrappersDetector.SearchingItem.tilde.charString),
+        .charWrapped(WrappersDetector.SearchingItem.underscore.charString)
+    ]
+    
     public var hashValue: Int {
         return self.rawValue.hashValue
     }
@@ -69,8 +81,20 @@ public extension NSAttributedString {
                                            options: NSAttributedString.EnumerationOptions = [],
                                            range: NSRange? = nil,
                                            block: (Any?, NSRange, UnsafeMutablePointer<ObjCBool>) -> ()) {
-        let targetRange = range ?? NSRange.init(fullRangeOfString: self.string)
+        let targetRange = range ?? NSRange.range(of: self.string)
         self.enumerateAttribute(attr.rawValue, in: targetRange, options: options) { (value, range, stopPtr) in
+            block(value, range, stopPtr)
+        }
+    }
+    
+    public func enumerateNonNilDetectorAttribute(_ attr: DetectorAttributeName,
+                                                 options: NSAttributedString.EnumerationOptions = [],
+                                                 range: NSRange? = nil,
+                                                 block: (Any, NSRange, UnsafeMutablePointer<ObjCBool>) -> ()) {
+        self.enumerateDetectorAttribute(attr) { (v, range, stopPtr) in
+            guard let value = v else {
+                return
+            }
             block(value, range, stopPtr)
         }
     }

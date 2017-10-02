@@ -8,6 +8,28 @@
 
 import Foundation
 
+public protocol MentionDetectorMentionValueProvider {
+    func valueForName(_ name: String, mentionDetector: MentionDetector) -> Any?
+}
+
+public enum BasicMentionDetectorMentionValueWrapper: MentionDetectorMentionValueProvider {
+    case dictionary([String : Any])
+    case array([String])
+    
+    public func valueForName(_ name: String, mentionDetector: MentionDetector) -> Any? {
+        switch self {
+        case .dictionary(let dictionary): return dictionary[name]
+        case .array(let array): return array.contains(name)
+        }
+    }
+}
+
+/**
+ By default set values for detected attribute as 'true' if value provider is nil.
+ You can provide your own custom values (like user ids) by setting 'valueProvider'.
+ You can also use BasicMentionDetectorMentionValueWrapper with wrapped dictionary
+ (keys are names and values are values for string attributes)
+ */
 public class MentionDetector: Detector {
     
     public struct SimplePatternConfig {
@@ -27,7 +49,7 @@ public class MentionDetector: Detector {
         }
     }
     
-    public var allowedNames: [String]? = nil
+    public var valueProvider: MentionDetectorMentionValueProvider? = nil
     
     private let regex: NSRegularExpression
     
@@ -44,15 +66,30 @@ public class MentionDetector: Detector {
         var spots: [DetectorSpot] = []
         let matches = self.regex.matches(in: text.string,
                                          options: [],
-                                         range: NSRange.init(fullRangeOfString: text.string))
+                                         range: NSRange.range(of: text.string))
         for match in matches {
-            let spot = DetectorSpot.init([DetectorAttributeName.mention : true], range: match.range)
-            spots.append(spot)
+            guard match.numberOfRanges >= 2 else {
+                continue
+            }
+            
+            let range = match.rangeAt(1)
+            
+            guard let valueProvider = self.valueProvider else {
+                let spot = DetectorSpot.init([DetectorAttributeName.mention : true], range: range)
+                spots.append(spot)
+                continue
+            }
+            
+            let name = (text.string as NSString).substring(with: range)
+            if let providerValue = valueProvider.valueForName(name, mentionDetector: self) {
+                let spot = DetectorSpot.init([DetectorAttributeName.mention : providerValue], range: range)
+                spots.append(spot)
+            }
         }
         
         spots.applySpots(text: text)
         
-        return .none
+        return .attributesChange
     }
     
 }

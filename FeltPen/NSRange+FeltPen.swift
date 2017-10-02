@@ -9,14 +9,9 @@
 import Foundation
 
 
-public extension NSRange {
+internal extension NSRange {
     
-    public init(fullRangeOfString: String) {
-        self.location = 0
-        self.length = fullRangeOfString.characters.count
-    }
-    
-    public func subranges(rangesToExtract: [NSRange]) -> [NSRange] {
+    internal func subranges(rangesToExtract: [NSRange]) -> [NSRange] {
         
         let unionRangesToExtract = rangesToExtract.unionRanges
         
@@ -53,6 +48,32 @@ public extension NSRange {
         return ranges
     }
     
+    // For some reason this method is unavailable in tests
+    internal static func range(of string: String) -> NSRange {
+        return NSRange.init(location: 0, length: string.characters.count)
+    }
+    
+    internal func isEqualTo(_ range: NSRange) -> Bool {
+        return NSEqualRanges(self, range)
+    }
+    
+    internal var descr: String {
+        return NSStringFromRange(self)
+    }
+    
+    internal func toUnicodeScalar(string: String) -> Range<String.UnicodeScalarIndex> {
+        let swiftRange = self.toRange()!
+        let uniRangeStart = string.unicodeScalars.index(string.startIndex, offsetBy: swiftRange.lowerBound)
+        let uniRangeEnd = string.unicodeScalars.index(string.startIndex, offsetBy: swiftRange.upperBound)
+        let uniRange = uniRangeStart..<uniRangeEnd
+        return uniRange
+    }
+    
+    internal static func fromUnicodeScalar(_ range: Range<String.UnicodeScalarIndex>) -> NSRange {
+        let range = NSRange.init(location: range.lowerBound.encodedOffset,
+                                 length: (range.upperBound.encodedOffset - range.lowerBound.encodedOffset))
+        return range
+    }
 }
 
 public extension Array where Element == NSRange {

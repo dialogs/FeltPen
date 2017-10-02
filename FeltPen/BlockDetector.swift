@@ -13,7 +13,7 @@ class BlockDetector: Detector {
     @discardableResult func process(text: NSMutableAttributedString) throws -> DetectorResult {
         
         let string = text.string as NSString
-        let wholeRange = NSRange.init(fullRangeOfString: text.string)
+        let wholeRange = NSRange.range(of: text.string)
         
         var stack: Stack = []
         var spots: [DetectorSpot] = []
@@ -34,7 +34,7 @@ class BlockDetector: Detector {
         
         spots.applySpots(text: text)
         
-        return .none
+        return spots.count > 0 ? DetectorResult.attributesChange : DetectorResult.none
     }
     
     private func createSpot(_ block: Block, end: Int) -> DetectorSpot {
@@ -108,5 +108,3 @@ class BlockDetector: Detector {
     }
     
 }
-
-

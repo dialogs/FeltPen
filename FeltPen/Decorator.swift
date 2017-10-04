@@ -24,6 +24,10 @@ public class Decorator: Detector {
     
     public var decoratableAttributes: [DetectorAttributeName] = [.bold, .italic, .strike]
     
+    public init() {
+        // do nothing
+    }
+    
     @discardableResult public func process(text: NSMutableAttributedString) throws -> DetectorResult {
         
         if textChangingAllowed {

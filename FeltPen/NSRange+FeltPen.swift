@@ -11,6 +11,10 @@ import Foundation
 
 internal extension NSRange {
     
+    var asRange: CountableRange<Int> {
+        return self.location..<self.length
+    }
+    
     internal func subranges(rangesToExtract: [NSRange]) -> [NSRange] {
         
         let unionRangesToExtract = rangesToExtract.unionRanges
@@ -53,6 +57,10 @@ internal extension NSRange {
         return NSRange.init(location: 0, length: string.characters.count)
     }
     
+    internal static func range(from: Int, to: Int) -> NSRange {
+        return NSRange.init(location: from, length: to - from)
+    }
+    
     internal func isEqualTo(_ range: NSRange) -> Bool {
         return NSEqualRanges(self, range)
     }
@@ -74,6 +82,80 @@ internal extension NSRange {
                                  length: (range.upperBound.encodedOffset - range.lowerBound.encodedOffset))
         return range
     }
+    
+    
+    internal enum RelationType {
+        
+        /// Comparable range is shifted and has no intersection
+        case offset(Int)
+        
+        /// The original range and the comparable one are equal
+        case same
+        
+        /// The comparable range contained by the original one
+        case contained
+        
+        /// The comparable range contains the original one
+        case contains
+        
+        /// The comparable and original range has intersection.
+        case intersects(NSRange, originalPart: NSRange, comparablePart: NSRange)
+    }
+    
+    internal func relationType(of range: NSRange) -> RelationType {
+        let intersection = NSIntersectionRange(self, range)
+        guard intersection.location != NSNotFound && intersection.length > 0 else {
+            return .offset(range.location - self.location)
+        }
+        
+        guard !NSEqualRanges(self, range) else {
+            return .same
+        }
+        
+        if self.isContains(range: range) {
+            return .contained
+        }
+        
+        if range.isContains(range: self) {
+            return .contains
+        }
+        
+        
+        let originalTail = self.removingTail(range: intersection)
+        let comparableTail = range.removingTail(range: intersection)
+        
+        return .intersects(intersection, originalPart: originalTail, comparablePart: comparableTail)
+    }
+    
+    internal static var undefined = NSRange(location: NSNotFound, length: 0)
+    
+    internal var isUndefined: Bool {
+        return self.location == NSNotFound && length == 0
+    }
+    
+    internal var isKindOfUndefined: Bool {
+        return self.location == NSNotFound || length == 0
+    }
+    
+    internal func removingTail(range: NSRange) -> NSRange {
+        let resultLength = self.length - range.length
+        guard resultLength > 0 else {
+            return NSRange.undefined
+        }
+        
+        if range.location == self.location {
+            return NSRange(location: NSMaxRange(range), length: resultLength)
+        }
+        else if NSMaxRange(range) == NSMaxRange(self) {
+            return NSRange(location: self.location, length: resultLength)
+        }
+        return NSRange.undefined
+    }
+    
+    internal func isContains(range: NSRange) -> Bool {
+        return range.location >= self.location && range.length <= self.length
+    }
+    
 }
 
 public extension Array where Element == NSRange {
@@ -122,5 +204,42 @@ public extension Array where Element == NSRange {
         }
         return unionRanges
     }
+    
 }
+
+
+/*
+ 
+ private func foundIntersection(_ range1: NSRange, _ range2: NSRange) -> RangeIntersection {
+ 
+ let intersection = NSIntersectionRange(range1, range2)
+ guard intersection.location != NSNotFound && intersection.length > 0 else {
+ return .none
+ }
+ 
+ guard !NSEqualRanges(range1, range2) else {
+ return .same
+ }
+ 
+ if range1.length == intersection.length {
+ return .contains(container: range1, contained: range2)
+ }
+ else if range2.length == intersection.length {
+ return .contains(container: range2, contained: range1)
+ }
+ 
+ 
+ 
+ let beforeRange: NSRange
+ let afterRange: NSRange
+ if range1.location < intersection.location {
+ beforeRange = NSRange(location: range1.location, legth: intersection.location - range1.location)
+ }
+ else {
+ 
+ }
+ 
+ return .none
+ }
+ */
 

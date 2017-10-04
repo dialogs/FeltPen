@@ -15,6 +15,8 @@
 		740058641F1137D70037E7ED /* WrappersDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058621F1137D70037E7ED /* WrappersDetectorTests.swift */; };
 		740CD0DB1F155EEB0030D23A /* UrlDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CD0DA1F155EEB0030D23A /* UrlDetector.swift */; };
 		7414EFB21F113E7F0042240D /* WrappersDetectorSearchingItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740058611F1137D70037E7ED /* WrappersDetectorSearchingItemTests.swift */; };
+		74179F3A1F83D77300F7ED0D /* DecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179F391F83D77300F7ED0D /* DecoratorTests.swift */; };
+		74179F3C1F83E59500F7ED0D /* UIFont+FeltPen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74179F3B1F83E59500F7ED0D /* UIFont+FeltPen.swift */; };
 		742F471D1F7A8C2200827DF9 /* MentionDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F471C1F7A8C2200827DF9 /* MentionDetectorTests.swift */; };
 		74507B001F683A6E00B94D02 /* NSRange+FeltPenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */; };
 		745750BF1F1573F900D8AA4B /* UrlDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745750BE1F1573F900D8AA4B /* UrlDetectorTests.swift */; };
@@ -54,6 +56,8 @@
 		740058611F1137D70037E7ED /* WrappersDetectorSearchingItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersDetectorSearchingItemTests.swift; sourceTree = "<group>"; };
 		740058621F1137D70037E7ED /* WrappersDetectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersDetectorTests.swift; sourceTree = "<group>"; };
 		740CD0DA1F155EEB0030D23A /* UrlDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlDetector.swift; sourceTree = "<group>"; };
+		74179F391F83D77300F7ED0D /* DecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorTests.swift; sourceTree = "<group>"; };
+		74179F3B1F83E59500F7ED0D /* UIFont+FeltPen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FeltPen.swift"; sourceTree = "<group>"; };
 		742F471C1F7A8C2200827DF9 /* MentionDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionDetectorTests.swift; sourceTree = "<group>"; };
 		74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+FeltPenTests.swift"; sourceTree = "<group>"; };
 		745750BE1F1573F900D8AA4B /* UrlDetectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlDetectorTests.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				747F90F61F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift */,
 				74C39C8B1F692A4E0088020F /* NSRange+FeltPen.swift */,
 				74F395071F7113C50082D52F /* NSAttributedString+FeltPen.swift */,
+				74179F3B1F83E59500F7ED0D /* UIFont+FeltPen.swift */,
 				740058461F11379A0037E7ED /* FeltPen.h */,
 				740058471F11379A0037E7ED /* Info.plist */,
 			);
@@ -141,6 +146,7 @@
 				746B390A1F7BB0C50077F03D /* Extensions.swift */,
 				74507AFF1F683A6E00B94D02 /* NSRange+FeltPenTests.swift */,
 				742F471C1F7A8C2200827DF9 /* MentionDetectorTests.swift */,
+				74179F391F83D77300F7ED0D /* DecoratorTests.swift */,
 				740058531F11379A0037E7ED /* Info.plist */,
 				74A3C9A81F11604E00CD4EFF /* Regexps.playground */,
 				745A25ED1F7A6D8500883168 /* BlockDetectorTests.swift */,
@@ -275,6 +281,7 @@
 				74F3950E1F7144C90082D52F /* URLRegularExpressionPart.swift in Sources */,
 				745A25F01F7A7B4800883168 /* MentionDetector.swift in Sources */,
 				7400585F1F1137C30037E7ED /* DetectorAttribute.swift in Sources */,
+				74179F3C1F83E59500F7ED0D /* UIFont+FeltPen.swift in Sources */,
 				747F90F71F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift in Sources */,
 				746B390D1F7BD3210077F03D /* Decorator.swift in Sources */,
 				740CD0DB1F155EEB0030D23A /* UrlDetector.swift in Sources */,
@@ -292,6 +299,7 @@
 			files = (
 				74F395101F7157710082D52F /* LinkExpect.swift in Sources */,
 				740058641F1137D70037E7ED /* WrappersDetectorTests.swift in Sources */,
+				74179F3A1F83D77300F7ED0D /* DecoratorTests.swift in Sources */,
 				7414EFB21F113E7F0042240D /* WrappersDetectorSearchingItemTests.swift in Sources */,
 				746B390B1F7BB0C50077F03D /* Extensions.swift in Sources */,
 				742F471D1F7A8C2200827DF9 /* MentionDetectorTests.swift in Sources */,

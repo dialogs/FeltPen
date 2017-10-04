@@ -40,7 +40,7 @@ public class WrappersDetector: Detector {
             let matches = regex.matches(in: text.string, options: [], range: range)
             let ranges = matches.rangesOfClosure(idx: 1)
             let itemSpots: [DetectorSpot] = ranges.map({ _, range in
-            return DetectorSpot.init([.charWrapped(item.charString): spotAttribute], range: range)
+                return DetectorSpot.init([.charWrapped(item.charString): spotAttribute], range: range)
             })
             spots.append(contentsOf: itemSpots)
         }

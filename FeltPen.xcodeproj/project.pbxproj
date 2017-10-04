@@ -67,7 +67,7 @@
 		746B390A1F7BB0C50077F03D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		746B390C1F7BD3210077F03D /* Decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decorator.swift; sourceTree = "<group>"; };
 		747F90F61F67D9C500331636 /* NSTextCheckingResult+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextCheckingResult+FeltPen.swift"; sourceTree = "<group>"; };
-		74A3C9A81F11604E00CD4EFF /* Regexps.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Regexps.playground; sourceTree = "<group>"; };
+		74A3C9A81F11604E00CD4EFF /* Regexps.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Regexps.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		74C39C8B1F692A4E0088020F /* NSRange+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+FeltPen.swift"; sourceTree = "<group>"; };
 		74DE72D81F75567100F58B77 /* UrlDetector+ConfigDomains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UrlDetector+ConfigDomains.swift"; sourceTree = "<group>"; };
 		74F395071F7113C50082D52F /* NSAttributedString+FeltPen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+FeltPen.swift"; sourceTree = "<group>"; };

@@ -9,20 +9,15 @@
 import Foundation
 
 
-public protocol DecoratorAttributeProvider {
-    func decorationAttributes(forAttribute: DetectorAttributeName, decorator: Decorator) -> Attributes
-    
-    func font(decorator: Decorator, range: NSRange, values: Attributes) -> UIFont
-    
-}
-
 public class Decorator: Detector {
     
     public var textChangingAllowed: Bool = true
     
     public lazy var defaultFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
     
-    public var decoratableAttributes: [DetectorAttributeName] = [.bold, .italic, .strike]
+    public var decoratableAttributes: [DetectorAttributeName] = [.bold, .italic, .strike, .mention]
+    
+    public var mentionBackgroundColor: UIColor = UIColor.init(white: 0.9, alpha: 1.0)
     
     public init() {
         // do nothing
@@ -151,6 +146,13 @@ public class Decorator: Detector {
         
         let strokeRanges = text.ranges(ofAttribute: DetectorAttributeName.strike.rawValue)
         applyRanges(strokeRanges, .strike)
+        
+        if self.decoratableAttributes.contains(.mention) {
+            let mentionRanges = text.ranges(ofAttribute: DetectorAttributeName.mention.rawValue)
+            for range in mentionRanges {
+                text.addAttribute(NSBackgroundColorAttributeName, value: self.mentionBackgroundColor, range: range)
+            }
+        }
         
         let valuedRanges = styles.buildValuedRanges()
         valuedRanges.forEach {entry in

@@ -57,6 +57,10 @@ internal extension NSRange {
         return NSRange.init(location: 0, length: string.characters.count)
     }
     
+    internal static func range(of string: String, in string2: String) -> NSRange {
+        return (string2 as NSString).range(of: string)
+    }
+    
     internal static func range(from: Int, to: Int) -> NSRange {
         return NSRange.init(location: from, length: to - from)
     }

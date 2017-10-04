@@ -41,7 +41,7 @@ public class MentionDetector: Detector {
         public var maxNickLength: Int = 25
         
         fileprivate var regexPattern: String {
-            var template = "(?:^|[ {dots_allowed},#!$%^&*;:{}=_`~()/-])(@(?:all|[a-z0-9_]{{min_limit},{max_limit}}))"
+            var template = "(?:^|[ {dots_allowed},#!$%^&*;:{}=_`~()/-])(@(?:all|[a-zA-Z0-9_]{{min_limit},{max_limit}}))"
             template = template.replacingOccurrences(of: "{dots_allowed}", with: dotsAllowed ? "." : "")
             template = template.replacingOccurrences(of: "{min_limit}", with: String(minNickLength))
             template = template.replacingOccurrences(of: "{max_limit}", with: String(maxNickLength))

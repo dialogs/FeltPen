@@ -113,7 +113,8 @@ public class Decorator: Detector {
                 }
                 
                 if self.contains(.strike) {
-                    attributes[NSStrikethroughStyleAttributeName] = NSUnderlineStyle.patternSolid
+                    attributes[NSStrikethroughStyleAttributeName] = NSUnderlineStyle.patternSolid.rawValue
+                    attributes[NSBaselineOffsetAttributeName] = 0
                 }
                 
                 return attributes

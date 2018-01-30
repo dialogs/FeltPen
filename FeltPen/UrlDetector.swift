@@ -352,7 +352,7 @@ public class UrlDetector: Detector, CustomStringConvertible {
         let attr = DetectorAttributeName.markdownUrl.rawValue
         let range = NSRange.range(of: attrString.string)
         var ranges: [NSRange] = []
-        attrString.enumerateAttribute(attr, in: range, options: [], using: { value, range, _ in
+        attrString.enumerateAttribute(NSAttributedStringKey(rawValue: attr), in: range, options: [], using: { value, range, _ in
             if value != nil {
                 ranges.append(range)
             }
@@ -379,7 +379,7 @@ public class UrlDetector: Detector, CustomStringConvertible {
                 return false
             }
             
-            let domainOnlyRange = match.rangeAt(firstDomainClosureIdx)
+            let domainOnlyRange = match.range(at: firstDomainClosureIdx)
             guard domainOnlyRange.location != NSNotFound, domainOnlyRange.length > 0 else {
                 return false
             }
@@ -421,7 +421,7 @@ public extension UrlDetector {
             let url = URL.init(string: urlLink)
             let fullUrlAttr = MarkdownUrl.init(text: urlText, link: urlLink, url: url)
             
-            text.addAttribute(DetectorAttributeName.markdownUrl.rawValue, value: fullUrlAttr, range: range)
+            text.addAttribute(NSAttributedStringKey(rawValue: DetectorAttributeName.markdownUrl.rawValue), value: fullUrlAttr, range: range)
         }
     }
     

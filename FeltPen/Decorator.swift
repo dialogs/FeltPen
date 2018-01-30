@@ -109,12 +109,12 @@ public class Decorator: Detector {
                     }
                     print("mod on end: \(modifiers)")
                     let newFont = font.font(modified: modifiers)
-                    attributes[NSFontAttributeName] = newFont
+                    attributes[NSAttributedStringKey.font] = newFont
                 }
                 
                 if self.contains(.strike) {
-                    attributes[NSStrikethroughStyleAttributeName] = NSUnderlineStyle.patternSolid.rawValue
-                    attributes[NSBaselineOffsetAttributeName] = 0
+                    attributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.patternSolid.rawValue
+                    attributes[NSAttributedStringKey.baselineOffset] = 0
                 }
                 
                 return attributes
@@ -151,7 +151,7 @@ public class Decorator: Detector {
         if self.decoratableAttributes.contains(.mention) {
             let mentionRanges = text.ranges(ofAttribute: DetectorAttributeName.mention.rawValue)
             for range in mentionRanges {
-                text.addAttribute(NSBackgroundColorAttributeName, value: self.mentionBackgroundColor, range: range)
+                text.addAttribute(NSAttributedStringKey.backgroundColor, value: self.mentionBackgroundColor, range: range)
             }
         }
         

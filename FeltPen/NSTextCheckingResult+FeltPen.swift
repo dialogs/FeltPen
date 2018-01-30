@@ -12,7 +12,7 @@ public extension NSTextCheckingResult {
     public var ranges: [NSRange] {
         var ranges: [NSRange] = []
         for i in 0..<self.numberOfRanges {
-            ranges.append(self.rangeAt(i))
+            ranges.append(self.range(at: i))
         }
         return ranges
     }
@@ -36,7 +36,7 @@ public extension NSTextCheckingResult {
         guard idx < self.numberOfRanges else {
             return nil
         }
-        let range = self.rangeAt(idx)
+        let range = self.range(at: idx)
         if allowEmptyRanges || range.length > 0 {
             return range
         }
@@ -77,7 +77,7 @@ public extension Array where Element == NSTextCheckingResult {
             guard match.numberOfRanges > idx else {
                 return nil
             }
-            return ClosureRange(idx, match.rangeAt(idx))
+            return ClosureRange(idx, match.range(at: idx))
         })
     }
     
@@ -91,7 +91,7 @@ public extension Array where Element == NSTextCheckingResult {
                 return nil
             }
             
-            let ranges: [NSRange] = indexes.map({ match.rangeAt($0) })
+            let ranges: [NSRange] = indexes.map({ match.range(at: $0) })
             return ClosureRanges(idx, ranges)
         })
     }

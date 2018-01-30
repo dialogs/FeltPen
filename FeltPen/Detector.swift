@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias Attributes = [String : Any]
+public typealias Attributes = [NSAttributedStringKey : Any]
 
 public struct DetectorSpot {
     
@@ -27,8 +27,8 @@ public struct DetectorSpot {
     
     public init(_ detectorAttributes: [DetectorAttributeName : Any], range: NSRange) {
         var attributes: Attributes = [:]
-        detectorAttributes.forEach({ (key, value) in
-            attributes[key.rawValue] = value
+        detectorAttributes.forEach({ (arg) in
+            attributes[NSAttributedStringKey.init(rawValue: arg.key.rawValue)] = arg.value
         })
         
         self.init(attributes: attributes, range: range)

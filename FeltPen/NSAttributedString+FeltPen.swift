@@ -15,7 +15,7 @@ public extension NSAttributedString {
                        includingNilValues: Bool = false) -> [NSRange] {
         let range = NSRange.range(of: self.string)
         var ranges: [NSRange] = []
-        self.enumerateAttribute(attrName, in: range, options: options, using: { value, range, _ in
+        self.enumerateAttribute(NSAttributedStringKey(rawValue: attrName), in: range, options: options, using: { value, range, _ in
             if includingNilValues || value != nil {
                 ranges.append(range)
             }

@@ -165,7 +165,7 @@ internal extension NSRange {
 public extension Array where Element == NSRange {
     
     var rangesSortedByLocation: [NSRange] {
-        return self.sorted(by: { $0.0.location < $0.1.location})
+        return self.sorted(by: { $0.location < $1.location})
     }
     
     var unionRanges: [NSRange] {

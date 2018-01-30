@@ -87,7 +87,7 @@ public extension NSAttributedString {
                                            range: NSRange? = nil,
                                            block: (Any?, NSRange, UnsafeMutablePointer<ObjCBool>) -> ()) {
         let targetRange = range ?? NSRange.range(of: self.string)
-        self.enumerateAttribute(attr.rawValue, in: targetRange, options: options) { (value, range, stopPtr) in
+        self.enumerateAttribute(NSAttributedStringKey(rawValue: attr.rawValue), in: targetRange, options: options) { (value, range, stopPtr) in
             block(value, range, stopPtr)
         }
     }

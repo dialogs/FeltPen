@@ -1,8 +1,9 @@
 Pod::Spec.new do |s|
 
   s.name         = "FeltPen"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Detecting and Decorating in-text elements"
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
   s.description  = <<-DESC
 Simple framework to detecting and decorating special elements in text.

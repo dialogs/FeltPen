@@ -72,7 +72,7 @@ public class MentionDetector: Detector {
                 continue
             }
             
-            let range = match.rangeAt(1)
+            let range = match.range(at: 1)
             
             guard let valueProvider = self.valueProvider else {
                 let spot = DetectorSpot.init([DetectorAttributeName.mention : true], range: range)

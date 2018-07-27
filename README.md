@@ -1,4 +1,4 @@
-# DialExt
+# FeltPen
 
 ## Example
 

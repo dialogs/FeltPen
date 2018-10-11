@@ -15,9 +15,12 @@ public class Decorator: Detector {
     
     public lazy var defaultFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
     
-    public var decoratableAttributes: [DetectorAttributeName] = [.bold, .italic, .strike, .mention]
+    public var decoratableAttributes: [DetectorAttributeName] = [.bold, .italic, .strike, .mention, .code]
     
     public var mentionBackgroundColor: UIColor = UIColor.init(white: 0.9, alpha: 1.0)
+
+	public var codeBackgroundColor: UIColor = UIColor.init(white: 0.9, alpha: 1.0)
+	public var codeForegroundColor: UIColor = UIColor(red: 0.8392, green: 0.2510, blue: 0.3098, alpha: 1)
     
     public init() {
         // do nothing
@@ -113,8 +116,7 @@ public class Decorator: Detector {
                 }
                 
                 if self.contains(.strike) {
-                    attributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.patternSolid.rawValue
-                    attributes[NSAttributedStringKey.baselineOffset] = 0
+					attributes[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.styleSingle.rawValue
                 }
                 
                 return attributes
@@ -147,7 +149,15 @@ public class Decorator: Detector {
         
         let strokeRanges = text.ranges(ofAttribute: DetectorAttributeName.strike.rawValue)
         applyRanges(strokeRanges, .strike)
-        
+
+		if self.decoratableAttributes.contains(.code) {
+			let ranges = text.ranges(ofAttribute: DetectorAttributeName.code.rawValue)
+			for range in ranges {
+				text.addAttribute(NSAttributedStringKey.backgroundColor, value: self.codeBackgroundColor, range: range)
+				text.addAttribute(NSAttributedStringKey.foregroundColor, value: self.codeForegroundColor, range: range)
+			}
+		}
+
         if self.decoratableAttributes.contains(.mention) {
             let mentionRanges = text.ranges(ofAttribute: DetectorAttributeName.mention.rawValue)
             for range in mentionRanges {
@@ -160,7 +170,7 @@ public class Decorator: Detector {
             let attributes = entry.value.attributes(defaultFont: defaultFont)
             let range = entry.key
             print("\nApplying [\(range)]: \(entry.value):\n\(attributes)\n")
-            text.addAttributes(entry.value.attributes(defaultFont: defaultFont), range: entry.key)
+            text.addAttributes(attributes, range: range)
         }
     }
     

@@ -36,7 +36,7 @@ public class WrappersDetector: Detector {
         for item in searchingItems {
             let spotAttribute = SpotAttribute.init(item: item)
             let regex = type(of: self).createRegex(item: item)
-            let range = NSRange(location: 0, length: text.string.characters.count)
+            let range = NSRange(location: 0, length: text.string.count)
             let matches = regex.matches(in: text.string, options: [], range: range)
             let ranges = matches.rangesOfClosure(idx: 1)
             let itemSpots: [DetectorSpot] = ranges.map({ _, range in

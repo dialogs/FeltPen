@@ -8,9 +8,13 @@
 
 import Foundation
 
-class BlockDetector: Detector {
-    
-    @discardableResult func process(text: NSMutableAttributedString) throws -> DetectorResult {
+public class BlockDetector: Detector {
+	private let searchingItems: [Block.BlockType]
+	public init(search: [Block.BlockType] = [.quote, .code]) {
+		self.searchingItems = search
+	}
+
+	@discardableResult public func process(text: NSMutableAttributedString) throws -> DetectorResult {
         
         let string = text.string as NSString
         let wholeRange = NSRange.range(of: text.string)
@@ -28,7 +32,8 @@ class BlockDetector: Detector {
                 let block = stack.removeLast()
                 let spot = self.createSpot(block, end: NSMaxRange(range))
                 spots.append(spot)
-            case .push: stack.append(Block.init(type: detectedBlockType, start: range.location))
+            case .push:
+				stack.append(Block.init(type: detectedBlockType, start: range.location))
             }
         })
         
@@ -71,10 +76,10 @@ class BlockDetector: Detector {
     }
     
     private func blockForLine(_ line: String) -> Block.BlockType? {
-        if line.hasPrefix("```") { 
+        if searchingItems.contains(.code) && line.hasPrefix("```") {
             return Block.BlockType.code
         }
-        if line.hasPrefix(">") {
+        if searchingItems.contains(.quote) && line.hasPrefix(">") {
             return Block.BlockType.quote
         }
         return nil
@@ -87,13 +92,13 @@ class BlockDetector: Detector {
         return currentBlock.type == block
     }
     
-    struct Block {
+    public struct Block {
         
         var type: BlockType
         
         var start: Int
         
-        enum BlockType: Int {
+        public enum BlockType: Int {
             case code
             case quote
             

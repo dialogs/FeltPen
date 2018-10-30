@@ -49,6 +49,8 @@ public struct DetectorAttributeName: RawRepresentable, Hashable {
     public static let strike = DetectorAttributeName.charWrapped("~")
     
     public static let italic = DetectorAttributeName.charWrapped("_")
+
+	public static let code = DetectorAttributeName.charWrapped("`")
     
     public static let url = DetectorAttributeName.init("lex.detector.attribute.url")
     
